@@ -6,7 +6,6 @@
 }
 
 .angular-hovercard-label {
-  color: #c0392b;
   position: relative;
 }
 
@@ -36,6 +35,8 @@
   opacity: 1;
   visibility: visible;
 }
+
+
 
 
 

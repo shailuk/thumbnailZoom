@@ -3,9 +3,8 @@
 <head>
 
   <script src= "bower_components/angular/angular.js"> </script>
-  <script src="bower_components/angular-hovercard/dist/angular-hovercard.js"></script>
-   <link rel ="stylesheet" href = "bower_components/angular-hovercard/dist/angular-hovercard.css">
-   <link rel ="stylesheet" href = "style.css">
+  <script src="angular-hovercard.js"></script>
+   <link rel ="stylesheet" href = "stylesheet/angular-hovercard.css">
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -23,22 +22,23 @@
     <div class = "row">
         <div class = "col-sm-2">
             
- <span hovercard  placement = "topRight" data = "copysheet1">    <!--directive for the zoomed image. code is 
-                                                                     in bower_components/angular-hovercard/dist
-                                                                     angular-hovercard.js -->
+ <span hovercard  placement = "bottomRight" data = "copysheet1">  
 
-
-
-    <div thumbnail-zoom  data = "copysheet1" >  </div>    <!--directive for the thumbnail-->
-
-
+    <div thumbnail-zoom  data = "copysheet1" >  </div> 
 
 </span>
 
 </div>
-</div>
-</div>
 
+ <!--<div class = "col-sm-2">
+        
+
+    <img thumbnail-zoom  data = "copysheet2"  hovercard  placement = "topRight" data = "copysheet1"/>   
+
+
+</div>-->
+
+ </div> </div>
 
 
 

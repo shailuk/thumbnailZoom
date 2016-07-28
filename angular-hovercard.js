@@ -1,7 +1,7 @@
 
 angular.module('hover', ['hovercard.tmpls']).directive('hovercard', function () {
   return {
-    restrict: 'A',
+    restrict: 'EA',
     transclude: true,
     templateUrl: 'template/angular-hovercard.tmpl',
     scope:{ data : '=' },
@@ -12,16 +12,17 @@ angular.module('hover', ['hovercard.tmpls']).directive('hovercard', function () 
     };
 
      $scope.copysheet2 = 
-    {
-       
+    {     
         zoomImageSource : "Images/CopySheet_1.jpg" ,
     };
+
     },
+
     link: function ($scope, $element, $attrs) {
 
       $scope.show = {};
       $scope.show.card = false;
-      $scope.hoverTmplUrl = "hoverCardDetail.html";
+      $scope.hoverTmplUrl = "templates/hoverCardDetail.html";
       var placement = $attrs.placement || 'bottomRight';
       $scope.hoverLabelStyle = {};
       $scope.hoverCardStyle = {};
@@ -34,8 +35,6 @@ angular.module('hover', ['hovercard.tmpls']).directive('hovercard', function () 
 
 
         if (positionObj.left) {
-
-          if(positionObj)
            $scope.hoverCardStyle.left = '';
           $scope.hoverCardStyle.right = '10em ';
         }
