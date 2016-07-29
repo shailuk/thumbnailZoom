@@ -1,4 +1,4 @@
-<html ng-app="ngApp">
+<html ng-app="hover">
 
 <head>
 
@@ -10,8 +10,7 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
-  <script src = "app.js" type = "text/javascript"> </script>
-  
+
 </head>
 
 
@@ -20,25 +19,29 @@
 
 <div class = "container">
     <div class = "row">
-        <div class = "col-sm-2">
             
- <span hovercard  placement = "bottomRight" data = "copysheet1">  
+   <div class = "col-sm-2">
+    <div hovercard placement = "bottomLeft" data = "copysheet1" /></div>
+  </div> 
 
-    <div thumbnail-zoom  data = "copysheet1" >  </div> 
+ <div class = "col-sm-2">
+  <div hovercard placement = "bottomRight" data = "copysheet2" /> </div>
+</div> 
 
-</span>
+<div class = "col-sm-2">
+  <div hovercard placement = "topLeft" data = "copysheet1" /> </div>
+</div>
+
+<div class = "col-sm-2">
+  <div hovercard placement = "topRight" data = "copysheet2" /> </div>
+</div>
 
 </div>
 
- <!--<div class = "col-sm-2">
-        
 
-    <img thumbnail-zoom  data = "copysheet2"  hovercard  placement = "topRight" data = "copysheet1"/>   
+</div>
 
 
-</div>-->
-
- </div> </div>
 
 
 

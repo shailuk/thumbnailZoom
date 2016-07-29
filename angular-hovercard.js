@@ -1,27 +1,20 @@
 
-angular.module('hover', ['hovercard.tmpls']).directive('hovercard', function () {
+var app = angular.module('hover', ['hovercard.tmpls']);
+
+app.directive('hovercard', function () {
   return {
     restrict: 'EA',
-    transclude: true,
+    
+    data : '=',
+    controller:'myContrl',
     templateUrl: 'template/angular-hovercard.tmpl',
     scope:{ data : '=' },
-    controller : function($scope){
-
-       $scope.copysheet1 = {
-        zoomImageSource : "Images/CopySheet_1.jpg" ,
-    };
-
-     $scope.copysheet2 = 
-    {     
-        zoomImageSource : "Images/CopySheet_1.jpg" ,
-    };
-
-    },
 
     link: function ($scope, $element, $attrs) {
 
       $scope.show = {};
       $scope.show.card = false;
+
       $scope.hoverTmplUrl = "templates/hoverCardDetail.html";
       var placement = $attrs.placement || 'bottomRight';
       $scope.hoverLabelStyle = {};
@@ -65,7 +58,26 @@ angular.module('hover', ['hovercard.tmpls']).directive('hovercard', function () 
 angular.module('hovercard.tmpls', []).run([
   '$templateCache',
   function ($templateCache) {
-
-    $templateCache.put('template/angular-hovercard.tmpl', '<div class=angular-hovercard ng-mouseenter="showCard = true;" ng-mouseleave="showCard = false;"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': showCard }" ng-style=hoverLabelStyle ng-transclude=""></label><div class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': showCard }" ng-include=hoverTmplUrl ng-style=hoverCardStyle></div></div>');
+    $templateCache.put('template/angular-hovercard.tmpl', '<a href = ""><img src = "{{data. thumbnailSource}}" width = "{{width}}" height = "{{height}}" class=angular-hovercard ng-mouseenter="showCard = true;" ng-mouseleave="showCard = false;"><label class=angular-hovercard-label ng-class="{ \'angular-hovercard-active\': showCard }" ng-style=hoverLabelStyle></a></label><embed ng-src = "{{data.zoomImageSource}}" height = "300" width = "300" class=angular-hovercard-detail ng-class="{ \'angular-hovercard-active\': showCard }" ng-style=hoverCardStyle>');
   }
 ]);
+
+app.controller('myContrl', function($scope) {
+
+
+    $scope.copysheet1 = {
+       
+        thumbnailSource : "Images/copysheet1-min.jpg",
+        zoomImageSource : "Images/CopySheet_1.jpg" ,
+    };
+
+     $scope.copysheet2 = 
+    {
+        thumbnailSource : "Images/copysheet1-min.jpg",
+        zoomImageSource : "Images/CopySheet_1.jpg" ,
+    };
+
+    $scope.width = 160;
+    $scope.height = 180;
+
+});
